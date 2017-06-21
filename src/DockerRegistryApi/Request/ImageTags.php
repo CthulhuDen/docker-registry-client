@@ -52,7 +52,8 @@ class ImageTags implements Request
         $imageTag = $this->getImageTag();
 
         $uri = "/v2/repositories/$imageRepository/$imageName/tags/";
-        return (is_null($this->getImageTag()) ? $uri : $uri . '/' . $imageTag . '/');
+
+        return (is_null($this->getImageTag()) ? $uri : $uri  . $imageTag . '/');
     }
 
     /**
