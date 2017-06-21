@@ -1,15 +1,15 @@
 {
-    "name": "madkom/docker-registry-api",
-    "description": "Client for docker registry.",
+    "name": "markdingemanse/docker-registry-api",
+    "description": "Client for docker registry. Forked from Madkom",
     "type": "library",
     "prefer-stable": true,
     "license": "MIT",
     "homepage": "http://madkom.pl/",
-    "keywords": ["madkom", "docker", "registry", "api", "private", "client"],
+    "keywords": ["madkom", "docker", "registry", "api", "private", "client", "markdingemanse"],
     "authors": [
         {
-            "name": "Darek Gafka",
-            "email": "d.gafka@madkom.pl"
+            "name": "Mark Dingemanse",
+            "email": "dingemansemark@gmail.com"
         }
     ],
     "minimum-stability": "dev",
