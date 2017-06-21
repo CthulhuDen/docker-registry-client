@@ -18,16 +18,20 @@ class ImageTags implements Request
     /** @var  string */
     private $imageTag;
 
+    /** @var  string */
+    private $imageRepository;
+
     /**
      * ImageTag constructor
      *
      * @param string $imageName
      * @param string $imageTag
      */
-    public function __construct($imageName, $imageTag = "")
+    public function __construct($imageRepository, $imageName, $imageTag = "")
     {
-        $this->imageName = $imageName;
-        $this->imageTag  = $imageTag;
+        $this->imageName   = $imageName;
+        $this->imageTag    = $imageTag;
+        $this->imageRepository  = $imageRepository;
     }
 
     /**
@@ -43,8 +47,12 @@ class ImageTags implements Request
      */
     public function uri()
     {
-        $uri = "/v2/repositories/$this->imageName/tags";
-        return (is_null($this->getImageTag()) ? $uri : $uri . '/' . $this->getImageTag() . '/');
+        $imageRepository = $this->getImageRepository();
+        $imageName = $this->getImageName();
+        $imageTag = $this->getImageTag();
+
+        $uri = "/v2/repositories/$imageRepository/$imageName/tags/";
+        return (is_null($this->getImageTag()) ? $uri : $uri . '/' . $imageTag . '/');
     }
 
     /**
@@ -89,5 +97,15 @@ class ImageTags implements Request
     public function getImageTag()
     {
         return $this->imageTag;
+    }
+
+    /**
+     * getter for the imageTag
+     *
+     * @return String
+     */
+    public function getImageRepository()
+    {
+        return $this->imageRepository;
     }
 }
