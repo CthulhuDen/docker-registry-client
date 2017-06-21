@@ -43,7 +43,7 @@ class ImageTags implements Request
      */
     public function uri()
     {
-        $uri = '/v2/repositories/' . $this->imageName . '/tags';
+        $uri = "/v2/repositories/$this->imageName/tags";
         return (is_null($this->getImageTag()) ? $uri : $uri . '/' . $this->getImageTag() . '/');
     }
 
